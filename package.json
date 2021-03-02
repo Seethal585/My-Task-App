@@ -1,0 +1,23 @@
+{
+  "name": "my-task-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seethal585/My-Task-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seethal585/My-Task-App/issues"
+  },
+  "homepage": "https://github.com/Seethal585/My-Task-App#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
