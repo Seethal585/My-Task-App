@@ -13,31 +13,33 @@
     <title>Task app</title>
 </head>
 
-<body>
+<body style="background-color: lightgray;">
     <!-- Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light text justify-content-center" style="background-color: lightblue;">
-                <a id="text-size" class="navbar-brand" href="name" style="font-size: 35px; font-weight: bold;">TASK-APP</a>
+        <nav class="navbar navbar-expand-lg navbar-light text justify-content-center" style="background-color:gray;">
+                <a id="text-size" class="navbar-brand" href="name" style="font-size: 35px; font-weight: bold;color:whitesmoke;">TASK-APP</a>
         </nav>
     </header>
     <!-- Name input -->
-    <div class="container-fluid">
-        <div class="row mt-3">
-            <div class="col-lg-8 text-center"> 
-            <label for="name" class="text-uppercase font-weight-bold">Task Name: </label>
-            </div>
-        </div>
-        <div class="row justify-content-center"> 
-            <div class="col-lg-4">
-                <div id="name-input" class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Enter the task" name="name"
-                        required>
-                    <div class="invalid-feedback">
+    <div class="container-fluid" >
+        <div class = "row">
+            <div class="col">
+                <div class="row mt-3">
+                    <div class="col-lg-8 text-center"> 
+                    <label for="name" class="text-uppercase font-weight-bold">Task Name: </label>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col-lg-6">
+                    <div id="name-input" class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Enter the task" name="name"
+                            required>
+                        <div class="invalid-feedback">
                         Input > 5 letters
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         <!-- Description input -->
         <div class="row mt-2">
             <div class="col-lg-8 text-center">
@@ -45,7 +47,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <textarea type="text" class="form-control" id="description" placeholder="Describe the task"
                             name="description" required></textarea>
                     <div class="invalid-feedback">
@@ -60,7 +62,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div id="assigned-input" class="form-group">
                     <input type="text" class="form-control" id="assigned-person" placeholder="Assign a person"
                         name="assigned-person" required>
@@ -77,7 +79,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div id="date-target" class="col-lg-4">
+            <div id="date-target" class="col-lg-6">
                 <input type="date" class="form-control" id="date-input" name="date-input">
                 <div class="invalid-feedback">
                     Input a date
@@ -91,7 +93,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div id="status-input" class="form-group col-lg-4">
+            <div id="status-input" class="form-group col-lg-6">
                 <select class="form-control" id="status" name="status">
                     <option value=''>Select an option</option>
                     <option>Pending</option>
@@ -104,29 +106,39 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-lg-3 mt-4">
                 <div id="submit-button">
-                    <input type="submit" class="btn btn-primary btn-lg active btn-block" value="Submit">
+                    <input type="submit" class="btn btn-lg active btn-block" style = "background-color: gray" value="Add task">
+                </div>
+            </div>
+            <div class="col-lg-3 mt-4">
+                <div id="clear-button">
+                    <input type="submit" class="btn btn-lg active btn-block" style = "background-color: gray" value="Clear">
                 </div>
             </div>
         </div>
     </div>
-        <div class="container-fluid">
-        <div id="task-card" class="row justify-content-center pt-4">
+    <div class="col mt-5 d-none d-md-block justify-content-center">
+        <img src = "task.png">
+    </div>
+    </div>
+    </div>
+        <div class="container-fluid mt-5" >
+        <div id="task-card" class="row justify-content-center py-4 ">
         </div>
     </div>
-    <footer class="d-none d-md-block pt-4" id="footer" style="background-color: lightblue;">
-        <div class="container-fluid">
-            <div class="row footer-color">
+    <footer class="d-none d-md-block pt-4 container-fluid mt-5" style="background-color:gray ;" id="footer" style="background-color: lightblue;">
+        <!-- <div class="container-fluid" style="background-color:gray ;"> -->
+            <div class="row ">
                 <div class="col">
-                    <p>&copy; 2021 TASK-APP. All rights reserved</p>
+                    <p style="color: whitesmoke;">&copy; 2021 TASK-APP. All rights reserved</p>
                 </div>
                 <div class="col text-right">
-                    <a href="#" class="card-link">Terms</a>
-                    <a href="#" class="card-link">privacy</a>
+                    <a href="#" class="card-link" style="color: whitesmoke;">Terms</a>
+                    <a href="#" class="card-link" style="color: whitesmoke;">privacy</a>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </footer>
 
     <script src="JS/taskManager.js" defer></script>

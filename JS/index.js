@@ -6,6 +6,8 @@ const dateItself = document.querySelector('#date-input');
 const statusCheck = document.querySelector('#status');
 const submitButton = document.querySelector('#submit-button');
 const goToTasks = document.querySelector('#task-card');
+const clearButton = document.querySelector('#clear-button')
+// console.log(clearButton)
 const newTask = new TaskManager();
 newTask.load();
 newTask.render();
@@ -41,7 +43,14 @@ submitButton.addEventListener('click', (event) => {
         return false;
     };
     // Validate a correct date is entered
-    if (dateItself.value != '') {
+    const dateSplit = dateItself.value.split(/\D/);
+    console.log(`dateSplit: ${dateSplit}`)
+    const dateValue = new Date(dateSplit[0], --dateSplit[1], ++dateSplit[2]);
+    console.log(`dateValue: ${dateValue}`)
+    // get current date
+    const dateNow = Date.now();
+    console.log(`dateNow: ${dateNow}`)
+    if (dateValue >= dateNow) {
         dateItself.classList.add('is-valid');
         dateItself.classList.remove('is-invalid');
     } else {
@@ -61,9 +70,15 @@ submitButton.addEventListener('click', (event) => {
     newTask.addTask(name2.value, description.value, assignedPerson.value, dateItself.value, statusCheck.value);
     removeFields();
     newTask.render();
-
+    newTask.save()
+})
+clearButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    // console.log('inside clear button')
+    removeFields()
+})   
     // Reset all input fields and clear it of previous input
-    function removeFields() {
+function removeFields() {
         name2.value = '';
         name2.classList.remove('is-valid');
         description.value = '';
@@ -74,9 +89,10 @@ submitButton.addEventListener('click', (event) => {
         dateItself.classList.remove('is-valid');
         statusCheck.value = '';
         statusCheck.classList.remove('is-valid');
-    }
-    newTask.save();
-});
+}
+//     newTask.save();
+// });
+
 goToTasks.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button')) {
         event.preventDefault();
@@ -98,7 +114,5 @@ goToTasks.addEventListener('click', (event) => {
         newTask.delete(taskId);
         newTask.save();
         newTask.render();
-    };
-
-
+    };    
 });

@@ -8,16 +8,14 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             </p>
             <p class="card-text">${assignedTo} is on the job!</p>
             <p class="card-text">Finish by: ${dueDate}</p>
-            <div class="card-footer row">
-                <div class="col-6">
-                    <p class="card-text"><b>Task status: ${status}</b></p>
-                </div>
-                <div class="col-3">
+            <p class="card-text"><b>Task status: ${status}</b></p>
+            <div class="card-footer row mt-4">
+                <div class="col-6 justify-content-center">
                     <button id="done-invisible" class="btn btn-outline-success done-button">
                         Done
                     </button>
                 </div>
-                <div class="col-3">
+                <div class="col-6 justify-content-center">
                     <button class="btn btn-outline-danger delete-button">
                         Delete
                     </button>
@@ -45,6 +43,7 @@ class TaskManager {
         };
         this.tasks.push(taskAdd);
     };
+    
     render() {
         let tasksHtmlList = [];
         for (let i = 0; i < this.tasks.length; i++) {
