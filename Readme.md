@@ -11,3 +11,11 @@ Its been a challenge to check for the date input whether it is valid or not. Any
 
 **Testing**
 We were introduced to do Mocha testing for the code. We added test cases to test for addtask, submit button, delete button and for done-button.
+
+
+**Public URL**
+Task app can be viewed at https://seethal585.github.io/My-Task-App/
+
+
+Thanks,
+Seethal
